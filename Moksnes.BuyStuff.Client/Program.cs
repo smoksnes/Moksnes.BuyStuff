@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Moksnes.BuyStuff.GrainInterfaces;
@@ -38,6 +39,7 @@ namespace Moksnes.BuyStuff.Client
 
         private static async Task<IClusterClient> ConnectClient()
         {
+            Thread.Sleep(5000);
             IClusterClient client;
             client = new ClientBuilder()
                 .UseLocalhostClustering()
@@ -59,7 +61,7 @@ namespace Moksnes.BuyStuff.Client
             // example of calling grains from the initialized client
             var friend = client.GetGrain<IHello>(0);
 
-            var post = client.GetGrain<IPost>(Guid.NewGuid());
+            var post = client.GetGrain<IPost>(Guid.Parse("75C47CAC-9217-469E-B0BC-176752314079"));
             await post.AddTitle("Title1");
 
             var response = await friend.SayHello("Good morning, HelloGrain!");

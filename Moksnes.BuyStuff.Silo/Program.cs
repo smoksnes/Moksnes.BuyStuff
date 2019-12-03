@@ -36,6 +36,8 @@ namespace ConsoleApp1
 
         private static async Task<ISiloHost> StartSilo()
         {
+            const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=OrleansDb;Trusted_Connection=True;MultipleActiveResultSets=True";
+
             // define the cluster configuration
             var builder = new SiloHostBuilder()
                 .UseLocalhostClustering()
@@ -44,6 +46,18 @@ namespace ConsoleApp1
                     options.ClusterId = "dev";
                     options.ServiceId = "OrleansBasics";
                 })
+                .AddAdoNetGrainStorage("OrleansStorage", options =>
+                {
+                    options.Invariant = "System.Data.SqlClient";
+                    options.ConnectionString = connectionString;
+                    options.UseJsonFormat = true;
+                })
+                .AddLogStorageBasedLogConsistencyProvider()
+                //.UseAdoNetClustering(options =>
+                //{
+                //    options.ConnectionString = connectionString;
+                //    options.Invariant = "System.Data.SqlClient";
+                //})
                 .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloGrain).Assembly).WithReferences())
                 .ConfigureLogging(logging => logging.AddConsole());
 
