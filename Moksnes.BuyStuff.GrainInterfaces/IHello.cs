@@ -6,4 +6,9 @@ namespace Moksnes.BuyStuff.GrainInterfaces
     {
         Task<string> SayHello(string greeting);
     }
+
+    public interface IPost : Orleans.IGrainWithGuidKey
+    {
+        Task AddTitle(string title);
+    }
 }
