@@ -9,13 +9,13 @@ namespace Moksnes.BuyStuff.Grains
     [LogConsistencyProvider(ProviderName = "LogStorage")]
     public class PostGrain : JournaledGrain<PostState, IPostEvent>, IPost
     {
-        async Task IPost.AddTitle(string title)
+        Task IPost.AddTitle(string title)
         {
             RaiseEvent(new PostTitleAdded
             {
                 Title = title
             });
-            await ConfirmEvents();
+            return ConfirmEvents();
         }
     }
 
@@ -33,10 +33,11 @@ namespace Moksnes.BuyStuff.Grains
     {
         public string Name { get; private set; }
 
-        void Apply(PostTitleAdded @event)
+        public PostState Apply(PostTitleAdded @event)
         {
             // code that updates the state
             Name = @event.Title;
+            return this;
         }
         //Apply(E2 @event)
         //{
