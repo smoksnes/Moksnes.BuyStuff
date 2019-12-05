@@ -1,21 +1,38 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk;Microsoft.NET.Sdk.Publish">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>703f5771-a1b6-4387-8ddc-3ea5b9a5f07f</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.0.1" />
     <PackageReference Include="Microsoft.Orleans.Clustering.AdoNet" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Orleans.Clustering.AzureStorage" Version="3.0.1" />
     <PackageReference Include="Microsoft.Orleans.Persistence.AdoNet" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Orleans.Persistence.AzureStorage" Version="3.0.1" />
     <PackageReference Include="Microsoft.Orleans.Server" Version="3.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
     <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Moksnes.BuyStuff.GrainInterfaces\Moksnes.BuyStuff.GrainInterfaces.csproj" />
     <ProjectReference Include="..\Moksnes.BuyStuff.Grains\Moksnes.BuyStuff.Grains.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <none Update="appsettings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </none>
 
+    <none Update="appsettings.*.json">
+      <DependentUpon>appsettings.json</DependentUpon>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </none>
+  </ItemGroup>
 </Project>

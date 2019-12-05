@@ -5,7 +5,7 @@ using Orleans.Providers;
 
 namespace Moksnes.BuyStuff.Grains
 {
-    [StorageProvider(ProviderName = "OrleansStorage")]
+    [StorageProvider(ProviderName = "azureBlob")]
     [LogConsistencyProvider(ProviderName = "LogStorage")]
     public class PostGrain : JournaledGrain<PostState, IPostEvent>, IPost
     {

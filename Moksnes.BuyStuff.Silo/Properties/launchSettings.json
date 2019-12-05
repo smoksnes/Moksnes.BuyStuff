@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Moksnes.BuyStuff.Silo": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
