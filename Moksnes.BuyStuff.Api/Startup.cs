@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Moksnes.BuyStuff.GrainInterfaces;
+using Orleans;
+using Orleans.Configuration;
 
 namespace Moksnes.BuyStuff.Api
 {
@@ -26,6 +29,21 @@ namespace Moksnes.BuyStuff.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //IClusterClient client = new ClientBuilder()
+            //    // Clustering information
+            //    .Configure<ClusterOptions>(options =>
+            //    {
+            //        options.ClusterId = "cluster1";
+            //        options.ServiceId = "service1";
+            //    })
+            //    .UseLocalhostClustering()
+            //    // Clustering provider
+            //    // Application parts: just reference one of the grain interfaces that we use
+            //    .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(IPost).Assembly))
+            //    .Build();
+
+            //services.AddSingleton(client);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

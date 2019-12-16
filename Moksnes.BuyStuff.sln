@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moksnes.BuyStuff.GrainInter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moksnes.BuyStuff.Grains", "Moksnes.BuyStuff.Grains\Moksnes.BuyStuff.Grains.csproj", "{85B00B04-B2A6-4221-BA03-58B4DA043257}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moksnes.BuyStuff.Api", "Moksnes.BuyStuff.Api\Moksnes.BuyStuff.Api.csproj", "{14F86F13-7304-41BC-BB78-0F1E15007E46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moksnes.BuyStuff.Api", "Moksnes.BuyStuff.Api\Moksnes.BuyStuff.Api.csproj", "{14F86F13-7304-41BC-BB78-0F1E15007E46}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7BFC9335-CCB4-497F-91AB-888F3F70FF7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moksnes.BuyStuff.Api.Console", "..\Moksnes.BuyStuff.Api.Console\Moksnes.BuyStuff.Api.Console.csproj", "{91619620-88F1-4293-8BEC-60C79BE12F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moksnes.BuyStuff.Host", "..\Moksnes.BuyStuff.Host\Moksnes.BuyStuff.Host.csproj", "{EC90712D-D24E-4B51-9728-E2E58A0DFC98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{14F86F13-7304-41BC-BB78-0F1E15007E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14F86F13-7304-41BC-BB78-0F1E15007E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14F86F13-7304-41BC-BB78-0F1E15007E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BFC9335-CCB4-497F-91AB-888F3F70FF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFC9335-CCB4-497F-91AB-888F3F70FF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFC9335-CCB4-497F-91AB-888F3F70FF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFC9335-CCB4-497F-91AB-888F3F70FF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91619620-88F1-4293-8BEC-60C79BE12F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91619620-88F1-4293-8BEC-60C79BE12F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91619620-88F1-4293-8BEC-60C79BE12F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91619620-88F1-4293-8BEC-60C79BE12F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC90712D-D24E-4B51-9728-E2E58A0DFC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC90712D-D24E-4B51-9728-E2E58A0DFC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC90712D-D24E-4B51-9728-E2E58A0DFC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC90712D-D24E-4B51-9728-E2E58A0DFC98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

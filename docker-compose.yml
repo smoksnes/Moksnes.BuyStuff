@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  moksnes.buystuff.silo:
+    image: ${DOCKER_REGISTRY-}moksnesbuystuffsilo
+    build:
+      context: .
+      dockerfile: Moksnes.BuyStuff.Silo/Dockerfile
+
+  moksnes.buystuff.api:
+    image: ${DOCKER_REGISTRY-}moksnesbuystuffapi
+    build:
+      context: .
+      dockerfile: Moksnes.BuyStuff.Api/Dockerfile
+
