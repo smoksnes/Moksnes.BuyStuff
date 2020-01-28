@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Moksnes.BuyStuff.Host": {
+      "commandName": "Project"
+    }
+  }
+}

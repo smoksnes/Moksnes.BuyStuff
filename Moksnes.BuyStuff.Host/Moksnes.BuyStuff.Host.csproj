@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>80a26a78-d929-44c0-b7cc-feac7314493c</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\Moksnes.BuyStuff</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Orleans.Server" Version="3.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Moksnes.BuyStuff.Api\Moksnes.BuyStuff.Api.csproj" />
+    <ProjectReference Include="..\Moksnes.BuyStuff.Silo\Moksnes.BuyStuff.Silo.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.scbsemo.json">
+      <DependentUpon>appsettings.json</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
