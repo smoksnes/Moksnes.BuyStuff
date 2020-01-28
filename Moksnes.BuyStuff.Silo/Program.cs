@@ -24,10 +24,10 @@ namespace Moksnes.BuyStuff.Silo
                     .Build();
 
                 var host = Host.CreateDefaultBuilder(args)
-                    .UseOrleans((context, builder) =>
+                    .UseOrleans((context, orleansConfiguration) =>
                     {
                         // Configure Orleans
-                        builder.ConfigureSilo(context);
+                        orleansConfiguration.ConfigureSilo(context);
                     })
                     .ConfigureLogging(logging =>
                     {
